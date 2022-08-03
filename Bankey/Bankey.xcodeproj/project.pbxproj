@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D2A4BED28998E5800DBF3FA /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2A4BEC28998E5800DBF3FA /* OnboardingContainerViewController.swift */; };
 		0D2A4BEF2899993400DBF3FA /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2A4BEE2899993400DBF3FA /* OnboardingViewController.swift */; };
+		0D2A4BF1289B0F9E00DBF3FA /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2A4BF0289B0F9E00DBF3FA /* DummyViewController.swift */; };
+		0D2A4BF4289B163D00DBF3FA /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2A4BF3289B163D00DBF3FA /* LocalState.swift */; };
 		0DB3550B289437E9003E7531 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB3550A289437E9003E7531 /* AppDelegate.swift */; };
 		0DB3550F289437E9003E7531 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB3550E289437E9003E7531 /* LoginViewController.swift */; };
 		0DB35514289437EC003E7531 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB35513289437EC003E7531 /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* Begin PBXFileReference section */
 		0D2A4BEC28998E5800DBF3FA /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		0D2A4BEE2899993400DBF3FA /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		0D2A4BF0289B0F9E00DBF3FA /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
+		0D2A4BF3289B163D00DBF3FA /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		0DB35507289437E9003E7531 /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB3550A289437E9003E7531 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DB3550E289437E9003E7531 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +52,14 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		0D2A4BF2289B163100DBF3FA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0D2A4BF3289B163D00DBF3FA /* LocalState.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		0DB354FE289437E9003E7531 = {
 			isa = PBXGroup;
 			children = (
@@ -67,10 +79,11 @@
 		0DB35509289437E9003E7531 /* Bankey */ = {
 			isa = PBXGroup;
 			children = (
-				0D2A4BEB28998E3800DBF3FA /* Onboarding */,
+				0DB3550A289437E9003E7531 /* AppDelegate.swift */,
 				0DB3551E28943F8D003E7531 /* Files */,
 				0DB3551F28943F9C003E7531 /* Login */,
-				0DB3550A289437E9003E7531 /* AppDelegate.swift */,
+				0D2A4BEB28998E3800DBF3FA /* Onboarding */,
+				0D2A4BF2289B163100DBF3FA /* Utils */,
 			);
 			path = Bankey;
 			sourceTree = "<group>";
@@ -90,6 +103,7 @@
 			children = (
 				0DB3550E289437E9003E7531 /* LoginViewController.swift */,
 				0DB3552028944013003E7531 /* LoginView.swift */,
+				0D2A4BF0289B0F9E00DBF3FA /* DummyViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -165,6 +179,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DB3552128944013003E7531 /* LoginView.swift in Sources */,
+				0D2A4BF4289B163D00DBF3FA /* LocalState.swift in Sources */,
+				0D2A4BF1289B0F9E00DBF3FA /* DummyViewController.swift in Sources */,
 				0DB3550F289437E9003E7531 /* LoginViewController.swift in Sources */,
 				0D2A4BEF2899993400DBF3FA /* OnboardingViewController.swift in Sources */,
 				0DB3550B289437E9003E7531 /* AppDelegate.swift in Sources */,
