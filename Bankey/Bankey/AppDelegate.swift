@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         dummyViewController.logoutDelegate = self
         window?.rootViewController = loginViewController
         
-        return false
+        return true
     }
 }
 
@@ -41,7 +41,6 @@ extension AppDelegate: LoginViewControllerDelegate {
     func didLogin() {
         if LocalState.hasOnboarded {
             setRootViewController(dummyViewController)
-            
         } else {
             setRootViewController(onboardingContainerViewController)
         }
