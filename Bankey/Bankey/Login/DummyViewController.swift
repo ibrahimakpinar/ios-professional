@@ -7,13 +7,12 @@
 
 import UIKit
 
-class DummyViewController: UIViewController {
+final class DummyViewController: UIViewController {
+    weak var logoutDelegate: LogoutDelegate?
     
     let stackView = UIStackView()
     let label = UILabel()
     let logoutButton = UIButton(type: .system)
-    
-    weak var logoutDelegate: LogoutDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +21,17 @@ class DummyViewController: UIViewController {
     }
 }
 
+// MARK: - Actions
+
 extension DummyViewController {
+    
+    @objc func logoutButtonTapped(sender: UIButton) {
+        logoutDelegate?.didLogout()
+    }
+}
+
+extension DummyViewController {
+    
     func style() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
@@ -48,10 +57,6 @@ extension DummyViewController {
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
-    }
-    
-    @objc func logoutButtonTapped(sender: UIButton) {
-        logoutDelegate?.didLogout()
     }
 }
 

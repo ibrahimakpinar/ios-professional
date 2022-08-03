@@ -30,7 +30,7 @@ final class LoginView: UIView {
 
 extension LoginView {
     
-    enum LayoutConstants {
+    private enum LayoutConstants {
         static let stackViewSpacing: CGFloat = 8
         static let dividerHeight: CGFloat = 1
         static let cornerRadius: CGFloat = 5

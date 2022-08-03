@@ -14,7 +14,6 @@ protocol OnboardingContainerViewControllerDelegate: AnyObject {
 final class OnboardingContainerViewController: UIViewController {
     weak var delegate: OnboardingContainerViewControllerDelegate?
     
-    
     var pages = [UIViewController]()
     var currentVC: UIViewController {
         didSet {

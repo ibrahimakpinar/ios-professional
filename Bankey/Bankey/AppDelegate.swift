@@ -37,6 +37,7 @@ extension AppDelegate: LogoutDelegate {
 }
 
 extension AppDelegate: LoginViewControllerDelegate {
+    
     func didLogin() {
         if LocalState.hasOnboarded {
             setRootViewController(dummyViewController)
@@ -56,6 +57,7 @@ extension AppDelegate: OnboardingContainerViewControllerDelegate {
 }
 
 extension AppDelegate {
+    
     func setRootViewController(_ vc: UIViewController, animated: Bool = true) {
         guard animated, let window = self.window else {
             self.window?.rootViewController = vc

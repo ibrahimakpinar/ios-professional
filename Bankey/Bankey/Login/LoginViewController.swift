@@ -28,7 +28,6 @@ final class LoginViewController: UIViewController {
     private var username: String? {
         return loginView.usernameTextFiled.text
     }
-    
     private var password: String? {
         return loginView.passwordTextField.text
     }
