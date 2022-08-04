@@ -7,6 +7,8 @@
 
 import UIKit
 
+let appColor: UIColor = .systemTeal
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -23,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         onboardingContainerViewController.delegate = self
         loginViewController.delagate = self
         dummyViewController.logoutDelegate = self
-        window?.rootViewController = loginViewController
+        window?.rootViewController = MainViewController()
         
         return true
     }
