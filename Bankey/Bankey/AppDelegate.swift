@@ -19,23 +19,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let mainViewController = MainViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
+        
         onboardingContainerViewController.delegate = self
         loginViewController.delagate = self
-        dummyViewController.logoutDelegate = self
-        let vc = mainViewController
-        vc.setStatusBar()
-        
-        
-        UINavigationBar.appearance().isTranslucent = true
-        UINavigationBar.appearance().backgroundColor = appColor
-        
-        window?.rootViewController = vc
+   
+        displayLogin()
         
         return true
+    }
+    
+    private func displayLogin() {
+        setRootViewController(loginViewController)
+    }
+    
+    private func displayNextScreen() {
+        if LocalState.hasOnboarded {
+            prepareMainView()
+            setRootViewController(mainViewController)
+        } else {
+            setRootViewController(onboardingContainerViewController)
+        }
+    }
+    
+    private func prepareMainView() {
+        mainViewController.setStatusBar()
+        UINavigationBar.appearance().isTranslucent = true
+        UINavigationBar.appearance().backgroundColor = appColor
     }
 }
 
@@ -49,11 +61,7 @@ extension AppDelegate: LogoutDelegate {
 extension AppDelegate: LoginViewControllerDelegate {
     
     func didLogin() {
-        if LocalState.hasOnboarded {
-            setRootViewController(mainViewController)
-        } else {
-            setRootViewController(onboardingContainerViewController)
-        }
+        displayNextScreen()
     }
 }
 
@@ -61,6 +69,7 @@ extension AppDelegate: OnboardingContainerViewControllerDelegate {
     
     func didFinishOnboarding() {
         LocalState.hasOnboarded = true
+        prepareMainView()
         setRootViewController(mainViewController)
     }
 }
