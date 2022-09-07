@@ -25,6 +25,8 @@
 		0DB5FEC7289C611A00C88C45 /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB5FEC6289C611A00C88C45 /* AccountSummaryViewController.swift */; };
 		0DB5FEC9289D7E8D00C88C45 /* AccountSummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB5FEC8289D7E8D00C88C45 /* AccountSummaryHeaderView.swift */; };
 		0DB5FECB289D7EDA00C88C45 /* AccountSummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB5FECA289D7EDA00C88C45 /* AccountSummaryHeaderView.xib */; };
+		0DC5AA6028C900DC00C39E4F /* NSNotificationName+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5AA5F28C900DC00C39E4F /* NSNotificationName+Extensions.swift */; };
+		0DC5AA6228C924A800C39E4F /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5AA6128C924A800C39E4F /* UITextField+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		0DB5FEC6289C611A00C88C45 /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
 		0DB5FEC8289D7E8D00C88C45 /* AccountSummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryHeaderView.swift; sourceTree = "<group>"; };
 		0DB5FECA289D7EDA00C88C45 /* AccountSummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSummaryHeaderView.xib; sourceTree = "<group>"; };
+		0DC5AA5F28C900DC00C39E4F /* NSNotificationName+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotificationName+Extensions.swift"; sourceTree = "<group>"; };
+		0DC5AA6128C924A800C39E4F /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 			children = (
 				0D2A4BF6289C289C00DBF3FA /* UIViewController+Extensions.swift */,
 				0D2EF44B28A571EA00ED16BD /* Decimal+Extensions.swift */,
+				0DC5AA5F28C900DC00C39E4F /* NSNotificationName+Extensions.swift */,
+				0DC5AA6128C924A800C39E4F /* UITextField+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -313,9 +319,11 @@
 				0DB3550F289437E9003E7531 /* LoginViewController.swift in Sources */,
 				0D2A4BF7289C289C00DBF3FA /* UIViewController+Extensions.swift in Sources */,
 				0D2EF44A28A444F700ED16BD /* AccountSummaryCell.swift in Sources */,
+				0DC5AA6228C924A800C39E4F /* UITextField+Extensions.swift in Sources */,
 				0D2A4BEF2899993400DBF3FA /* OnboardingViewController.swift in Sources */,
 				0D2A4BF9289C2A3B00DBF3FA /* MainViewController.swift in Sources */,
 				0DB5FEC7289C611A00C88C45 /* AccountSummaryViewController.swift in Sources */,
+				0DC5AA6028C900DC00C39E4F /* NSNotificationName+Extensions.swift in Sources */,
 				0DB3550B289437E9003E7531 /* AppDelegate.swift in Sources */,
 				0D2A4BED28998E5800DBF3FA /* OnboardingContainerViewController.swift in Sources */,
 			);
@@ -348,8 +356,9 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -359,6 +368,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mia.BankeyUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -372,8 +383,9 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -383,6 +395,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mia.BankeyUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

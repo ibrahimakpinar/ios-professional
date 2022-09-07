@@ -63,7 +63,7 @@ private extension AccountSummaryCell {
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
-        nameLabel.adjustsFontForContentSizeCategory = true
+        nameLabel.adjustsFontSizeToFitWidth = true
         nameLabel.text = "Account name"
         
         balanceStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -73,6 +73,7 @@ private extension AccountSummaryCell {
         balanceLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceLabel.font = UIFont.preferredFont(forTextStyle: .body)
         balanceLabel.textAlignment = .right
+        balanceLabel.adjustsFontSizeToFitWidth = true
         balanceLabel.text = "Some balance"
         
         balanceAmountLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -89,6 +90,7 @@ private extension AccountSummaryCell {
         
         balanceStackView.addArrangedSubview(balanceLabel)
         balanceStackView.addArrangedSubview(balanceAmountLabel)
+        
         contentView.addSubview(balanceStackView)
         contentView.addSubview(chevronImageView)
     }
@@ -104,7 +106,7 @@ private extension AccountSummaryCell {
             nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: underlineView.bottomAnchor, multiplier: 2),
             nameLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
             balanceStackView.topAnchor.constraint(equalToSystemSpacingBelow: underlineView.bottomAnchor, multiplier: 0),
-            balanceStackView.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor, constant: 4),
+            balanceStackView.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 4),
             trailingAnchor.constraint(equalToSystemSpacingAfter: balanceStackView.trailingAnchor, multiplier: 4),
             chevronImageView.topAnchor.constraint(equalToSystemSpacingBelow: underlineView.bottomAnchor, multiplier: 1),
             trailingAnchor.constraint(equalToSystemSpacingAfter: chevronImageView.trailingAnchor, multiplier: 1)
@@ -113,17 +115,17 @@ private extension AccountSummaryCell {
     
     func makeFormattedBalance(dollars: String, cents: String) -> NSMutableAttributedString {
         let dollarSignAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .callout), .baselineOffset: 8]
-        let dollarAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .title1)]
-        let centAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .footnote), .baselineOffset: 8]
-        
-        let rootString = NSMutableAttributedString(string: "$", attributes: dollarSignAttributes)
-        let dollarString = NSAttributedString(string: dollars, attributes: dollarAttributes)
-        let centString = NSAttributedString(string: cents, attributes: centAttributes)
-        
-        rootString.append(dollarString)
-        rootString.append(centString)
-        
-        return rootString
+          let dollarAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .title1)]
+          let centAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .footnote), .baselineOffset: 8]
+          
+          let rootString = NSMutableAttributedString(string: "$", attributes: dollarSignAttributes)
+          let dollarString = NSAttributedString(string: dollars, attributes: dollarAttributes)
+          let centString = NSAttributedString(string: cents, attributes: centAttributes)
+          
+          rootString.append(dollarString)
+          rootString.append(centString)
+          
+          return rootString
     }
 }
 
