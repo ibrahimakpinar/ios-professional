@@ -121,7 +121,9 @@ extension AccountSummaryViewController {
 }
 
 // MARK: - Networking
+
 extension AccountSummaryViewController {
+    
     private func fetchDataAndLoadViews() {
         
         fetchProfile(forUserId: "1") { result in
