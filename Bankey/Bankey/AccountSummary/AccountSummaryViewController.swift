@@ -54,6 +54,14 @@ private extension AccountSummaryViewController {
         fetchData()
     }
     
+    func setupTableViewHeader() {
+        var size =  headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        size.width = UIScreen.main.bounds.width
+        headerView.frame.size = size
+        
+        tableView.tableHeaderView = headerView
+    }
+    
     func setupTableView() {
         tableView.backgroundColor = appColor
         tableView.delegate = self
@@ -73,15 +81,7 @@ private extension AccountSummaryViewController {
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-    
-    func setupTableViewHeader() {
-        var size =  headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-        size.width = UIScreen.main.bounds.width
-        headerView.frame.size = size
         
-        tableView.tableHeaderView = headerView
-    }
-    
     func setupRefreshControl() {
         refreshControl.tintColor = appColor
         refreshControl.addTarget(
