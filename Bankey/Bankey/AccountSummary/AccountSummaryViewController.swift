@@ -23,7 +23,7 @@ final class AccountSummaryViewController: UIViewController {
     let headerView = AccountSummaryHeaderView(frame: .zero)
     let refreshControl = UIRefreshControl()
     
-    lazy var logoutBarButtonIten: UIBarButtonItem = {
+    lazy var logoutBarButtonItem: UIBarButtonItem = {
         let barButtonItem = UIBarButtonItem(
             title: "Logout",
             style: .plain,
@@ -100,7 +100,7 @@ private extension AccountSummaryViewController {
     }
     
     func setupNavigationBar() {
-        navigationItem.rightBarButtonItem = logoutBarButtonIten
+        navigationItem.rightBarButtonItem = logoutBarButtonItem
     }
 }
 
