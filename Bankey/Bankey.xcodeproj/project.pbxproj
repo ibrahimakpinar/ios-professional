@@ -33,6 +33,9 @@
 		0DC5AA6028C900DC00C39E4F /* NSNotificationName+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5AA5F28C900DC00C39E4F /* NSNotificationName+Extensions.swift */; };
 		0DC5AA6228C924A800C39E4F /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC5AA6128C924A800C39E4F /* UITextField+Extensions.swift */; };
 		0DFA47F828D8CBBA00CAB8D3 /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA47F728D8CBBA00CAB8D3 /* SkeletonCell.swift */; };
+		0DFFF15E29A373EF00C3161E /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFFF15D29A373EF00C3161E /* Account.swift */; };
+		0DFFF16029A3749400C3161E /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFFF15F29A3749400C3161E /* AccountType.swift */; };
+		0DFFF16229A3753300C3161E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFFF16129A3753300C3161E /* Profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,9 @@
 		0DC5AA5F28C900DC00C39E4F /* NSNotificationName+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotificationName+Extensions.swift"; sourceTree = "<group>"; };
 		0DC5AA6128C924A800C39E4F /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		0DFA47F728D8CBBA00CAB8D3 /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
+		0DFFF15D29A373EF00C3161E /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		0DFFF15F29A3749400C3161E /* AccountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountType.swift; sourceTree = "<group>"; };
+		0DFFF16129A3753300C3161E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,12 +240,31 @@
 		0DB5FEC5289C60F100C88C45 /* AccountSummary */ = {
 			isa = PBXGroup;
 			children = (
-				0DB5FEC6289C611A00C88C45 /* AccountSummaryViewController.swift */,
 				0D2FFE1928CB54DE00476DC0 /* AccountSummaryViewController+Networking.swift */,
-				0D2EF44728A444A800ED16BD /* Header */,
 				0D2EF44828A444C000ED16BD /* Cells */,
+				0D2EF44728A444A800ED16BD /* Header */,
+				0DFFF15C29A373DE00C3161E /* Model */,
+				0DFFF15B29A373C300C3161E /* View */,
 			);
 			path = AccountSummary;
+			sourceTree = "<group>";
+		};
+		0DFFF15B29A373C300C3161E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0DB5FEC6289C611A00C88C45 /* AccountSummaryViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0DFFF15C29A373DE00C3161E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0DFFF15D29A373EF00C3161E /* Account.swift */,
+				0DFFF15F29A3749400C3161E /* AccountType.swift */,
+				0DFFF16129A3753300C3161E /* Profile.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +379,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D2EF44C28A571EA00ED16BD /* Decimal+Extensions.swift in Sources */,
+				0DFFF16229A3753300C3161E /* Profile.swift in Sources */,
+				0DFFF15E29A373EF00C3161E /* Account.swift in Sources */,
+				0DFFF16029A3749400C3161E /* AccountType.swift in Sources */,
 				0DB3552128944013003E7531 /* LoginView.swift in Sources */,
 				0D2A4BF4289B163D00DBF3FA /* LocalState.swift in Sources */,
 				0D2A4BF1289B0F9E00DBF3FA /* DummyViewController.swift in Sources */,

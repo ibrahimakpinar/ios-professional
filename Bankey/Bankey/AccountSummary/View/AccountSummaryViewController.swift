@@ -142,21 +142,22 @@ extension AccountSummaryViewController: UITableViewDelegate {
 
 // MARK: - Networking
 
-extension AccountSummaryViewController {
+private extension AccountSummaryViewController {
     
-    private func fetchData() {
+    func fetchData() {
         let group = DispatchGroup()
         // Random user
         let userId = String(Int.random(in: 1..<4))
         
         group.enter()
+
         fetchProfile(forUserId: userId) { result in
             switch result {
             case .success(let profile):
                 self.profile = profile
                 self.tableView.reloadData()
             case .failure(let error):
-                print(error.localizedDescription)
+                self.displayError(error)
             }
             group.leave()
         }
@@ -167,7 +168,7 @@ extension AccountSummaryViewController {
             case .success(let accounts):
                 self.accounts = accounts
             case .failure(let error):
-                print(error.localizedDescription)
+                self.displayError(error)
             }
             group.leave()
         }
@@ -184,14 +185,16 @@ extension AccountSummaryViewController {
         }
     }
     
-    private func configureTableHeaderView(with profile: Profile) {
-        let vm = AccountSummaryHeaderView.ViewModel(welcomeMessage: "Good morning,",
-                                                    name: profile.firstName,
-                                                    date: Date())
+    func configureTableHeaderView(with profile: Profile) {
+        let vm = AccountSummaryHeaderView.ViewModel(
+            welcomeMessage: "Good morning,",
+            name: profile.firstName,
+            date: Date()
+        )
         headerView.configure(viewModel: vm)
     }
     
-    private func configureTableCells(with accounts: [Account]) {
+    func configureTableCells(with accounts: [Account]) {
         accountCellViewModels = accounts.map {
             AccountSummaryCell.ViewModel(
                 accountType: $0.type,
@@ -199,6 +202,32 @@ extension AccountSummaryViewController {
                 balance: $0.amount
             )
         }
+    }
+    
+    func displayError(_ error: NetworkError) {
+        let title: String
+        let message: String
+        
+        switch error {
+        case .serverError:
+            title = "Server Error"
+            message = "Ensure you are connected to the internet. Please try again."
+        case .decodingError:
+            title = "Decoding Error"
+            message = "We could no process your request. Please try again."
+        }
+        self.showErrorAlert(title: title, message: message)
+    }
+    
+    func showErrorAlert(title: String, message: String) {
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
 }
 
