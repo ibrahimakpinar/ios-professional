@@ -36,6 +36,9 @@
 		0DFFF15E29A373EF00C3161E /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFFF15D29A373EF00C3161E /* Account.swift */; };
 		0DFFF16029A3749400C3161E /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFFF15F29A3749400C3161E /* AccountType.swift */; };
 		0DFFF16229A3753300C3161E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFFF16129A3753300C3161E /* Profile.swift */; };
+		0DFFF16A29A8BA2900C3161E /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFFF16929A8BA2800C3161E /* ProfileManager.swift */; };
+		0DFFF16C29A8BB2F00C3161E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFFF16B29A8BB2F00C3161E /* NetworkError.swift */; };
+		0DFFF16E29A8BCB700C3161E /* AccountSummaryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFFF16D29A8BCB700C3161E /* AccountSummaryViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,9 @@
 		0DFFF15D29A373EF00C3161E /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		0DFFF15F29A3749400C3161E /* AccountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountType.swift; sourceTree = "<group>"; };
 		0DFFF16129A3753300C3161E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		0DFFF16929A8BA2800C3161E /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		0DFFF16B29A8BB2F00C3161E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		0DFFF16D29A8BCB700C3161E /* AccountSummaryViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				0D2FFE1D28CBA01700476DC0 /* ProfileTests.swift */,
+				0DFFF16D29A8BCB700C3161E /* AccountSummaryViewControllerTests.swift */,
 			);
 			path = AccountSummary;
 			sourceTree = "<group>";
@@ -240,6 +247,7 @@
 		0DB5FEC5289C60F100C88C45 /* AccountSummary */ = {
 			isa = PBXGroup;
 			children = (
+				0DFFF16829A8BA1200C3161E /* Networking */,
 				0D2FFE1928CB54DE00476DC0 /* AccountSummaryViewController+Networking.swift */,
 				0D2EF44828A444C000ED16BD /* Cells */,
 				0D2EF44728A444A800ED16BD /* Header */,
@@ -263,8 +271,17 @@
 				0DFFF15D29A373EF00C3161E /* Account.swift */,
 				0DFFF15F29A3749400C3161E /* AccountType.swift */,
 				0DFFF16129A3753300C3161E /* Profile.swift */,
+				0DFFF16B29A8BB2F00C3161E /* NetworkError.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0DFFF16829A8BA1200C3161E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0DFFF16929A8BA2800C3161E /* ProfileManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DFFF16E29A8BCB700C3161E /* AccountSummaryViewControllerTests.swift in Sources */,
 				0D2EF45D28A6B66100ED16BD /* CurrencyFormatterTests.swift in Sources */,
 				0D2FFE1E28CBA01700476DC0 /* ProfileTests.swift in Sources */,
 			);
@@ -379,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D2EF44C28A571EA00ED16BD /* Decimal+Extensions.swift in Sources */,
+				0DFFF16A29A8BA2900C3161E /* ProfileManager.swift in Sources */,
 				0DFFF16229A3753300C3161E /* Profile.swift in Sources */,
 				0DFFF15E29A373EF00C3161E /* Account.swift in Sources */,
 				0DFFF16029A3749400C3161E /* AccountType.swift in Sources */,
@@ -400,6 +419,7 @@
 				0DC5AA6028C900DC00C39E4F /* NSNotificationName+Extensions.swift in Sources */,
 				0DB3550B289437E9003E7531 /* AppDelegate.swift in Sources */,
 				0D2A4BED28998E5800DBF3FA /* OnboardingContainerViewController.swift in Sources */,
+				0DFFF16C29A8BB2F00C3161E /* NetworkError.swift in Sources */,
 				0D2FFE2028CBA9C300476DC0 /* SkeletonLoadable.swift in Sources */,
 				0D2FFE1A28CB54DE00476DC0 /* AccountSummaryViewController+Networking.swift in Sources */,
 			);
