@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D8A66AA29AB1E640029A569 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8A66A929AB1E640029A569 /* PasswordTextField.swift */; };
 		0DFB9D3C29AA39890066D32A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB9D3B29AA39890066D32A /* AppDelegate.swift */; };
 		0DFB9D4029AA39890066D32A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB9D3F29AA39890066D32A /* ViewController.swift */; };
 		0DFB9D4829AA398A0066D32A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DFB9D4729AA398A0066D32A /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D8A66A929AB1E640029A569 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		0DFB9D3829AA39890066D32A /* Password.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Password.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DFB9D3B29AA39890066D32A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DFB9D3F29AA39890066D32A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,9 +98,10 @@
 			isa = PBXGroup;
 			children = (
 				0DFB9D4C29AA398A0066D32A /* Info.plist */,
-				0DFB9D6E29AA3A120066D32A /* Files */,
 				0DFB9D3B29AA39890066D32A /* AppDelegate.swift */,
 				0DFB9D3F29AA39890066D32A /* ViewController.swift */,
+				0D8A66A929AB1E640029A569 /* PasswordTextField.swift */,
+				0DFB9D6E29AA3A120066D32A /* Files */,
 			);
 			path = Password;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				0DFB9D4029AA39890066D32A /* ViewController.swift in Sources */,
 				0DFB9D3C29AA39890066D32A /* AppDelegate.swift in Sources */,
+				0D8A66AA29AB1E640029A569 /* PasswordTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
