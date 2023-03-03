@@ -8,11 +8,11 @@
 import UIKit
 
 final class ViewController: UIViewController {
-    let stackView = UIStackView()
-    let newPasswordTextField = PasswordTextField(placeHolderText: "New Password")
-    let passwordStatusView = PasswordStatusView()
-    let confirmPasswordTextField = PasswordTextField(placeHolderText: "Re-enter new Password")
-    let resetButton = UIButton(type: .system)
+    private let stackView = UIStackView()
+    private let newPasswordTextField = PasswordTextField(placeHolderText: "New Password")
+    private let passwordStatusView = PasswordStatusView()
+    private let confirmPasswordTextField = PasswordTextField(placeHolderText: "Re-enter new Password")
+    private let resetButton = UIButton(type: .system)
     
     override func viewDidLoad() {
         super.viewDidLoad()
