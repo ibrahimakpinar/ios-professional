@@ -15,7 +15,7 @@ final class PasswordCriteriaView: UIView {
     private let xmarkImage = UIImage(systemName: "xmark.circle")!.withTintColor(.systemRed, renderingMode: .alwaysOriginal)
     private let circleImage = UIImage(systemName: "circle")!.withTintColor(.tertiaryLabel, renderingMode: .alwaysOriginal)
     
-    private var isCriteriaMet: Bool = false {
+    var isCriteriaMet: Bool = false {
         didSet {
             if isCriteriaMet {
                 imageView.image = checkmarkImage
@@ -98,9 +98,9 @@ private extension PasswordCriteriaView {
     }
 }
 
-// MARK: - Private functions
+// MARK: - functions
 
-private extension PasswordCriteriaView {
+extension PasswordCriteriaView {
     
     func reset() {
         isCriteriaMet = false
