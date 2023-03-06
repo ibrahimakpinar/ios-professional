@@ -8,8 +8,8 @@
 import UIKit
 
 protocol PasswordTextFieldDelegate: AnyObject {
-    
     func editingChanged(_ sender: PasswordTextField)
+    func editingDidEnd(_ sender: PasswordTextField) // add
 }
 
 final class PasswordTextField: UIView {
@@ -17,6 +17,10 @@ final class PasswordTextField: UIView {
     // MARK: - Delegates
     
     weak var delegate: PasswordTextFieldDelegate?
+    
+    // MARK: - Type alies
+    
+    typealias CustomValidation = (_ textValue: String?) -> (Bool, String)?
     
     // MARK: - Private fields
     
@@ -27,8 +31,19 @@ final class PasswordTextField: UIView {
     private let errorLablel = UILabel()
     
     // MARK: - fields
+    
     let textField = UITextField()
-
+    var customValidation: CustomValidation?
+    
+    var text: String? {
+        get {
+            return textField.text
+        }
+        set {
+            textField.text = newValue
+        }
+    }
+    
     init(placeHolderText: String) {
         self.placeHolderText = placeHolderText
         super.init(frame: .zero)
@@ -73,7 +88,7 @@ private extension PasswordTextField {
         )
         
         // Eye Button
-
+        
         eyeButton.translatesAutoresizingMaskIntoConstraints = false
         eyeButton.setImage(UIImage(systemName: "eye.circle"), for: .normal)
         eyeButton.setImage(UIImage(systemName: "eye.slash.circle"), for: .selected)
@@ -95,7 +110,7 @@ private extension PasswordTextField {
         errorLablel.textColor = .systemRed
         errorLablel.text = "Your password must meet the requirements below."
         errorLablel.numberOfLines = 0
-        errorLablel.lineBreakMode = .byCharWrapping
+        errorLablel.lineBreakMode = .byWordWrapping
         errorLablel.isHidden = true
     }
     
@@ -165,6 +180,45 @@ private extension PasswordTextField {
 
 // MARK: - UITextFieldDelegate
 
-extension PasswordTextField: UITextFieldDelegate {}
+extension PasswordTextField: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        delegate?.editingDidEnd(self)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        
+        return true
+    }
+}
 
+// MARK: - Validation
+
+extension PasswordTextField {
+    
+    func validate() -> Bool {
+        if let customValidation = customValidation,
+           let customValidationResult = customValidation(text),
+           customValidationResult.0 == false {
+            showError(customValidationResult.1)
+            
+            return false
+        }
+        
+        clearError()
+        
+        return true
+    }
+    
+    private func showError(_ errorMessage: String) {
+        errorLablel.isHidden = false
+        errorLablel.text = errorMessage
+    }
+    
+    private func clearError() {
+        errorLablel.isHidden = true
+        errorLablel.text = ""
+    }
+}
 
