@@ -28,10 +28,10 @@ final class PasswordTextField: UIView {
     private let placeHolderText: String
     private let eyeButton = UIButton(type: .custom)
     private let dividerView = UIView()
-    private let errorLablel = UILabel()
     
     // MARK: - fields
     
+    let errorLabel = UILabel()
     let textField = UITextField()
     var customValidation: CustomValidation?
     
@@ -105,13 +105,13 @@ private extension PasswordTextField {
         
         // Error Label
         
-        errorLablel.translatesAutoresizingMaskIntoConstraints = false
-        errorLablel.font = .preferredFont(forTextStyle: .footnote)
-        errorLablel.textColor = .systemRed
-        errorLablel.text = "Your password must meet the requirements below."
-        errorLablel.numberOfLines = 0
-        errorLablel.lineBreakMode = .byWordWrapping
-        errorLablel.isHidden = true
+        errorLabel.translatesAutoresizingMaskIntoConstraints = false
+        errorLabel.font = .preferredFont(forTextStyle: .footnote)
+        errorLabel.textColor = .systemRed
+        errorLabel.text = "Your password must meet the requirements below."
+        errorLabel.numberOfLines = 0
+        errorLabel.lineBreakMode = .byWordWrapping
+        errorLabel.isHidden = true
     }
     
     func layout() {
@@ -119,7 +119,7 @@ private extension PasswordTextField {
         addSubview(textField)
         addSubview(eyeButton)
         addSubview(dividerView)
-        addSubview(errorLablel)
+        addSubview(errorLabel)
         
         // Lock Image Constraints
         
@@ -152,9 +152,9 @@ private extension PasswordTextField {
         
         // Error Lablel
         NSLayoutConstraint.activate([
-            errorLablel.topAnchor.constraint(equalTo: dividerView.bottomAnchor, constant: 4),
-            errorLablel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            errorLablel.trailingAnchor.constraint(equalTo: trailingAnchor)
+            errorLabel.topAnchor.constraint(equalTo: dividerView.bottomAnchor, constant: 4),
+            errorLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            errorLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
         
         // Content Hugging & Content Compression Resistance Priority
@@ -212,13 +212,13 @@ extension PasswordTextField {
     }
     
     private func showError(_ errorMessage: String) {
-        errorLablel.isHidden = false
-        errorLablel.text = errorMessage
+        errorLabel.isHidden = false
+        errorLabel.text = errorMessage
     }
     
     private func clearError() {
-        errorLablel.isHidden = true
-        errorLablel.text = ""
+        errorLabel.isHidden = true
+        errorLabel.text = ""
     }
 }
 
